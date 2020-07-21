@@ -195,9 +195,9 @@ uint32_t BMP_RGB332_getOffset(uint8_t *pbmp)
   * @param  pbmp pointer to a image
   * @param  x	x of a image(Range:[0,width-1] ) [pixel]
   * @param  y	y of a image(Range:[0,height-1]) [pixel]
-  * @param  r	Red   value [0, 255] (Lower 3 bits are ignored)
-  * @param  g	Green value [0, 255] (Lower 2 bits are ignored)
-  * @param  b	Blue  value [0, 255] (Lower 3 bits are ignored)
+  * @param  r	Red   value [0, 255] (Lower 5 bits are ignored)
+  * @param  g	Green value [0, 255] (Lower 5 bits are ignored)
+  * @param  b	Blue  value [0, 255] (Lower 6 bits are ignored)
   * @retval None
   */
 void BMP_RGB332_setPixelRGB(uint8_t *pbmp, uint32_t x, uint32_t y, uint8_t r, uint8_t g, uint8_t b)
@@ -246,9 +246,9 @@ void BMP_RGB332_getPixelRGB(uint8_t *pbmp, uint32_t x, uint32_t y, uint8_t *r, u
   * @param  y0  Start y position of a line(Range:[0,width-1] ) [pixel]
   * @param  x1	End   x position of a line(Range:[0,width-1] ) [pixel]
   * @param  y1  End   y position of a line(Range:[0,width-1] ) [pixel]
-  * @param  r	Red   value [0, 255] (Lower 3 bits are ignored)
-  * @param  g	Green value [0, 255] (Lower 2 bits are ignored)
-  * @param  b	Blue  value [0, 255] (Lower 3 bits are ignored)
+  * @param  r	Red   value [0, 255] (Lower 5 bits are ignored)
+  * @param  g	Green value [0, 255] (Lower 5 bits are ignored)
+  * @param  b	Blue  value [0, 255] (Lower 6 bits are ignored)
   * @retval None
   * @detail Bresenham's line algorithm
   *         ref : https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#C
@@ -296,9 +296,9 @@ void BMP_RGB332_drawLineRGB(uint8_t *pbmp,
   * @param  y0  Start y position of a line(Range:[0,width-1] ) [pixel]
   * @param  x1	End   x position of a line(Range:[0,width-1] ) [pixel]
   * @param  y1  End   y position of a line(Range:[0,width-1] ) [pixel]
-  * @param  r	Red   value [0, 255] (Lower 3 bits are ignored)
-  * @param  g	Green value [0, 255] (Lower 2 bits are ignored)
-  * @param  b	Blue  value [0, 255] (Lower 3 bits are ignored)
+  * @param  r	Red   value [0, 255] (Lower 5 bits are ignored)
+  * @param  g	Green value [0, 255] (Lower 5 bits are ignored)
+  * @param  b	Blue  value [0, 255] (Lower 6 bits are ignored)
   * @retval None
   */
 void BMP_RGB332_drawRectRGB(uint8_t *pbmp,
@@ -344,9 +344,9 @@ void BMP_RGB332_drawRectRGB(uint8_t *pbmp,
 /**
   * @brief  Fill image in a specified RGB color.
   * @param  pbmp pointer to a image
-  * @param  r	Red   value [0, 255] (Lower 3 bits are ignored)
-  * @param  g	Green value [0, 255] (Lower 2 bits are ignored)
-  * @param  b	Blue  value [0, 255] (Lower 3 bits are ignored)
+  * @param  r	Red   value [0, 255] (Lower 5 bits are ignored)
+  * @param  g	Green value [0, 255] (Lower 5 bits are ignored)
+  * @param  b	Blue  value [0, 255] (Lower 6 bits are ignored)
   * @retval None
   */
 void BMP_RGB332_fillRGB(uint8_t *pbmp, uint8_t r, uint8_t g, uint8_t b)
