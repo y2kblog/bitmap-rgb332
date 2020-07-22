@@ -4593,9 +4593,9 @@ void BMP_RGB332_fillRGB(uint8_t *pbmp, uint8_t r, uint8_t g, uint8_t b)
   * @param  font font
   * @param  x_start	Start x position of characters (Range:[0,width-1] ) [pixel]
   * @param  y_start Start y position of characters (Range:[0,width-1] ) [pixel]
-  * @param  r	Red   value [0, 255] (Lower 3 bits are ignored)
-  * @param  g	Green value [0, 255] (Lower 2 bits are ignored)
-  * @param  b	Blue  value [0, 255] (Lower 3 bits are ignored)
+  * @param  r	Red   value [0, 255] (Lower 5 bits are ignored)
+  * @param  g	Green value [0, 255] (Lower 5 bits are ignored)
+  * @param  b	Blue  value [0, 255] (Lower 6 bits are ignored)
   * @retval None
   * @detail The fonts to be used must be enabled in `bmp_rgb332.h`.
   */
