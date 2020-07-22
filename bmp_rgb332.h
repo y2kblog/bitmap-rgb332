@@ -11,6 +11,27 @@ extern "C" {
 
 /* Include user header files -------------------------------------------------*/
 /* Exported macro ------------------------------------------------------------*/
+/** @def
+ * Enable needed fonts here
+ */
+// #define USE_FONT_4X6
+// #define USE_FONT_5X8
+// #define USE_FONT_5X12
+// #define USE_FONT_6X8
+#define USE_FONT_6X10
+// #define USE_FONT_7X12
+// #define USE_FONT_8X8
+// #define USE_FONT_8X12
+// #define USE_FONT_8X14
+// #define USE_FONT_10X16
+// #define USE_FONT_12X16
+// #define USE_FONT_12X20
+// #define USE_FONT_16X26
+// #define USE_FONT_22X36
+// #define USE_FONT_24X40
+// #define USE_FONT_32X53
+
+
 #ifndef COLOR_R
 #define COLOR_R(_C_COLOR_)      (uint8_t)((_C_COLOR_)>>16)
 #endif
@@ -32,6 +53,68 @@ typedef void   (*BMP_RGB332_free_Function)(void *);
 /* Exported enum tag ---------------------------------------------------------*/
 /* Exported struct/union tag -------------------------------------------------*/
 /* Exported variables --------------------------------------------------------*/
+    /** 
+ * Font source : https://www.mikrocontroller.net/user/show/benedikt
+ *               https://www.mikrocontroller.net/topic/goto_post/1291943
+ */
+typedef struct
+{
+   uint8_t *p;
+   int8_t char_width;
+   int8_t char_height;
+} BMP_RGB332_font_st;
+
+
+#ifdef USE_FONT_4X6
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_4X6;
+#endif
+#ifdef USE_FONT_5X8
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_5X8;
+#endif
+#ifdef USE_FONT_5X12
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_5X12;
+#endif
+#ifdef USE_FONT_6X8
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_6X8;
+#endif
+#ifdef USE_FONT_6X10
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_6X10;
+#endif
+#ifdef USE_FONT_7X12
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_7X12;
+#endif
+#ifdef USE_FONT_8X8
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_8X8;
+#endif
+#ifdef USE_FONT_8X12
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_8X12;
+#endif
+#ifdef USE_FONT_8X14
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_8X14;
+#endif
+#ifdef USE_FONT_10X16
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_10X16;
+#endif
+#ifdef USE_FONT_12X16
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_12X16;
+#endif
+#ifdef USE_FONT_12X20
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_12X20;
+#endif
+#ifdef USE_FONT_16X26
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_16X26;
+#endif
+#ifdef USE_FONT_22X36
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_22X36;
+#endif
+#ifdef USE_FONT_24X40
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_24X40;
+#endif
+#ifdef USE_FONT_32X53
+extern const BMP_RGB332_font_st BMP_RGB332_FONT_32X53;
+#endif
+
+
 /* Exported function prototypes ----------------------------------------------*/
 extern void		 BMP_RGB332_setAllocFunc(BMP_RGB332_Malloc_Function, BMP_RGB332_free_Function);
 extern uint8_t * BMP_RGB332_create      (uint32_t, uint32_t);
@@ -46,6 +129,7 @@ extern void      BMP_RGB332_getPixelRGB (uint8_t *, uint32_t, uint32_t, uint8_t 
 extern void      BMP_RGB332_drawLineRGB (uint8_t *, int32_t, int32_t, int32_t, int32_t, uint8_t, uint8_t, uint8_t);
 extern void      BMP_RGB332_drawRectRGB (uint8_t *, uint32_t, uint32_t, uint32_t, uint32_t, uint8_t, uint8_t, uint8_t);
 extern void      BMP_RGB332_fillRGB     (uint8_t *, uint8_t, uint8_t, uint8_t);
+extern void      BMP_RGB332_drawTextRGB(uint8_t *, char *, BMP_RGB332_font_st, uint32_t, uint32_t, uint8_t, uint8_t, uint8_t);
 extern uint8_t * BMP_RGB332_copy(uint8_t *);
 extern uint8_t * BMP_RGB332_resize_bicubic(uint8_t *, uint32_t, uint32_t);
 
