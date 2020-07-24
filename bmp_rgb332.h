@@ -132,6 +132,7 @@ extern void      BMP_RGB332_fillRGB     (uint8_t *, uint8_t, uint8_t, uint8_t);
 extern void      BMP_RGB332_drawTextRGB(uint8_t *, char *, BMP_RGB332_font_st, uint32_t, uint32_t, uint8_t, uint8_t, uint8_t);
 extern uint8_t * BMP_RGB332_copy(uint8_t *);
 extern uint8_t * BMP_RGB332_resize_bicubic(uint8_t *, uint32_t, uint32_t);
+extern int       BMP_RGB332_colorScale(float, float, float, uint8_t *, uint8_t *, uint8_t *);
 
 #ifdef __cplusplus
 }
